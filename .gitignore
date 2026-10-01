@@ -1,0 +1,4 @@
+.DS_Store
+.idea/
+.obsidian/workspace*.json
+.claude/settings.local.json
