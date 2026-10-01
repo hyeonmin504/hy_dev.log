@@ -5,8 +5,8 @@ set -u
 input=$(cat)
 tool=$(printf '%s' "$input" | jq -r '.tool_name // ""')
 
-# 패턴: 회사 도메인·내부 링크·클라우드 식별자·키·티켓 번호·사설 IP
-PATTERN='sportsprism\.net|atlassian\.net|notion\.so|amazonaws\.com|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|token)[[:space:]]*[:=][[:space:]]*[^[:space:]]{6,}|(^|[^A-Za-z0-9])(DEV|DEVT|SJ)-[0-9]{1,5}([^0-9]|$)|(^|[^0-9])(10|192\.168|172\.(1[6-9]|2[0-9]|3[01]))\.[0-9]+\.[0-9]+'
+# 패턴: 회사 도메인·패키지 경로·내부 링크·클라우드 식별자·키·티켓 번호·사설 IP
+PATTERN='sportsprism\.net|net\.sportsprism|atlassian\.net|notion\.so|amazonaws\.com|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|token)[[:space:]]*[:=][[:space:]]*[^[:space:]]{6,}|(^|[^A-Za-z0-9])(DEV|DEVT|SJ)-[0-9]{1,5}([^0-9]|$)|(^|[^0-9])(10|192\.168|172\.(1[6-9]|2[0-9]|3[01]))\.[0-9]+\.[0-9]+'
 
 check() {  # $1 = 검사 대상 텍스트, $2 = 출처 설명
   hits=$(printf '%s' "$1" | grep -nEio "$PATTERN" | head -5)
