@@ -17,10 +17,7 @@
 | 2 | | | 확정 |
 
 ## 원인
-(필요하면 흐름 슈도코드. CLAUDE.md 코드 인용 규칙)
-
-```pseudo
-```
+(흐름이 필요하면 CLAUDE.md "표현 방식 고르기"대로 하나만. 한 행위자의 순서 → `pseudo`, 둘 이상이 시간순으로 엇갈림 → mermaid `sequenceDiagram`, 구조 비교 → `flowchart LR`. 빈 블록은 남기지 않는다)
 
 ## 해결
 
